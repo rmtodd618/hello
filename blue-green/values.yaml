@@ -3,7 +3,7 @@ replicaCount: 3
 image:
   repository: rmtodd618/helloworld
   pullPolicy: IfNotPresent
-  tag: "v2.0"
+  tag: "v3.0"
 
 service:
   type: ClusterIP
