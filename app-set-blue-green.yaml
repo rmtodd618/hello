@@ -1,26 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
   name: blue-green
   namespace: argocd
 spec:
-  generators:
-  - list:
-      elements:
-      - cluster: staging
-        url: https://kubernetes.default.svc
-  template:
-    metadata:
-      name: blue-green
-    spec:
-      project: "default"
-      source:
-        repoURL: https://github.com/rmtodd618/hello.git
-        targetRevision: v3
-        helm:
-          rollout:
-            enabled: true
-        path: blue-green
-      destination:
-        server: '{{url}}'
-        namespace: sre
+  destination:
+    namespace: sre
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      values: |
+        rollout:
+          enabled: true
+    repoURL: https://github.com/rmtodd618/hello.git
+    targetRevision: v3
+    path: blue-green
