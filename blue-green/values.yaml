@@ -1,5 +1,6 @@
 replicaCount: 3
-
+rollout: 
+  enabled: false
 image:
   repository: rmtodd618/helloworld
   pullPolicy: IfNotPresent
