@@ -13,6 +13,8 @@ spec:
       values: |
         rollout:
           enabled: true
-    repoURL: https://github.com/rmtodd618/hello.git
+        deployment:
+          enabled: false
+    repoURL: https://github.com/dapper/sre-operator
     targetRevision: v3
     path: blue-green
