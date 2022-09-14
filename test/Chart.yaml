@@ -1,7 +1,0 @@
-apiVersion: v2
-name: argo-cd
-version: 1.0.0
-dependencies:
-  - name: blue-green
-    version: 0.1.0
-    repository: https://github.com/rmtodd618
