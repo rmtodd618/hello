@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: blue-green
+  namespace: argocd
+spec:
+  destination:
+    namespace: sre
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      values: |
+        rollout:
+          enabled: true
+        deployment:
+          enabled: false
+    repoURL: https://github.com/rmtodd618/hello.git
+    targetRevision: v3
+    path: blue-green
