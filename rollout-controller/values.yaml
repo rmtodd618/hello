@@ -1,2 +1,3 @@
-controller:
-  replicas: 1
+rollout-controller:
+  controller:
+    replicas: 1
