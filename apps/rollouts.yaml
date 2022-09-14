@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rollout-controller
+  name: argo-rollouts
   namespace: argocd
 spec:
   project: default
@@ -14,7 +14,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-    path: rollout-controller/
+    path: argo-rollouts/
   syncPolicy:
     automated:
       prune: true
