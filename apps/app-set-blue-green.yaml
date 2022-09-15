@@ -14,7 +14,7 @@ spec:
         rollout:
           enabled: true
         deployment:
-          enabled: false
+          enabled: true
     repoURL: https://github.com/rmtodd618/hello.git
     targetRevision: v3
     path: blue-green
