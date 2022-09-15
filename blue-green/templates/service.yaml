@@ -7,9 +7,6 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
-    chart: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
 spec:
   type: ClusterIP
   ports:
@@ -26,9 +23,6 @@ metadata:
   name: {{ .Chart.Name }}-preview
   labels:
     app: {{ .Chart.Name }}
-    chart: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
 spec:
   type: ClusterIP
   ports:
