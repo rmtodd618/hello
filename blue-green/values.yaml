@@ -1,6 +1,6 @@
 replicaCount: 3
 deployment:
-  enabled: true
+  enabled: false
 rollout: 
   enabled: true
 image:
