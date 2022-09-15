@@ -4,32 +4,40 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}-active
+  name: {{ .Chart.Name }}
   labels:
-    app: {{ .Chart.Name }}-active
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
-  type: ClusterIP
+  type: {{ .Values.service.type }}
   ports:
-    - name: http-metrics
+    - port: {{ .Values.service.port }}
+      targetPort: http
       protocol: TCP
-      port: 80
-      targetPort: 80
+      name: http
   selector:
-    name: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Chart.Name }}-preview
   labels:
-    app: {{ .Chart.Name }}-preview
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
-  type: ClusterIP
+  type: {{ .Values.service.type }}
   ports:
-    - name: http-metrics
+    - port: {{ .Values.service.port }}
+      targetPort: http
       protocol: TCP
-      port: 80
-      targetPort: 80
+      name: http
   selector:
-    name: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
 {{ end }}
