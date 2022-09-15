@@ -13,7 +13,7 @@ spec:
       app: {{ .Chart.Name }}
   strategy:
     blueGreen:
-      activeService: {{ .Chart.Name }}
+      activeService: {{ .Chart.Name }}-active
       previewService: {{ .Chart.Name }}-preview
       autoPromotionEnabled: false
   template:

@@ -2,7 +2,7 @@ replicaCount: 3
 deployment:
   enabled: true
 rollout: 
-  enabled: false
+  enabled: true
 image:
   repository: rmtodd618/helloworld
   pullPolicy: IfNotPresent
