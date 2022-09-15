@@ -5,15 +5,12 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
-    chart: {{ .Chart.Name }}
-    heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: {{ .Chart.Name }}
-      release: {{ .Release.Name }}
   strategy:
     blueGreen:
       activeService: {{ .Chart.Name }}
