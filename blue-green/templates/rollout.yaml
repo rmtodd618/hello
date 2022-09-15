@@ -6,7 +6,6 @@ metadata:
   labels:
     app: {{ .Chart.Name }}
     chart: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -24,7 +23,6 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
-        release: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
