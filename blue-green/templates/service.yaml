@@ -22,7 +22,7 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}-preview
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}-preview
 spec:
   type: ClusterIP
   ports:
